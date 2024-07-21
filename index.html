@@ -12,40 +12,44 @@
     <div id="app">
         <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
             <div class="content-box">
-                <div class="row g-0">
-                    <div class="contacts">
-                        <div class="col-6 d-flex align-items-center p-2">
-                            <img src="./img/avatar_1.jpg" alt="Francesco" class="img-fluid me-2">
+                <div class="contacts">
+                    <div class="d-flex justify-content-between align-items-center p-1">
+                        <div class="d-flex align-items-center">
+                            <img src="./img/avatar_1.jpg" alt="Francesco" class="avatar me-2">
                             <span class="fs-12">Francesco</span>
                         </div>
-                        <div class="col-6 justify-content-end align-items-center d-flex p-2">
+                        <div class="d-flex align-items-center">
                             <i class="fa-solid fa-circle-notch me-2 header-icon"></i>
                             <i class="fa-solid fa-message me-2 header-icon"></i>
                             <i class="fa-solid fa-ellipsis-vertical me-2 header-icon"></i>
                         </div>
-                        <div class="col-12 bg-azure d-flex p-1">
-                            <div class="col-2 align-items-center d-flex">
-                                <i class="fa-solid fa-bell-slash azure label-white"></i>
-                            </div>
-                            <div class="col-10 d-flex align-items-center">
-                                <div class="fs-12">Ricevi notifiche di nuovi messaggi <br>
-                                    <a href="#" class="fs-10 text-secondary">Attiva notifiche desktop</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 p-1">
-                            <div class="input-group fs-12 input-group-sm flex-nowrap">
-                                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
-                            </div>
+                    </div>
+                    <div class="bg-azure d-flex p-2 align-items-center">
+                        <i class="fa-solid fa-bell-slash azure label-white me-2"></i>
+                        <div class="fs-12">
+                            Ricevi notifiche di nuovi messaggi <br>
+                            <a href="#" class="fs-10 text-secondary">Attiva notifiche desktop</a>
                         </div>
                     </div>
-                    <div class="chat">
-                        <h2>Chat</h2>
+                    <div class="input-group input-group-sm p-1">
+                        <span class="input-group-text" id="search-addon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" aria-describedby="search-addon">
+                    </div>
+                    <div class="contacts-body">
+                        <div class="contact-item d-flex p-1" v-for="(contact, index) in contacts">
+                            <img :src="contact.avatar" alt="" class="avatar me-2">
+                            <div>
+                                <div>{{ contact.name }}</div>
+                                <span class="text-secondary fs-10">ultimo messaggio inviato</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="chat p-3">
+                    <h2>Chat</h2>
+                </div>
             </div>
-    </div>
+        </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
