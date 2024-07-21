@@ -38,9 +38,9 @@
                     <div class="contacts-body">
                         <div class="contact-item d-flex p-1" v-for="(contact, index) in contacts">
                             <img :src="contact.avatar" alt="" class="avatar me-2">
-                            <div>
+                            <div class="d-flex flex-column mb-0">
                                 <div>{{ contact.name }}</div>
-                                <span class="text-secondary fs-10">ultimo messaggio inviato</span>
+                                <span class="text-secondary fs-10">{{ contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                         </div>
                     </div>
