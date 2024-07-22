@@ -165,7 +165,14 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            active_contact: null
+        }
+    },
+    methods: {
+        selectChat(index) {
+            this.active_contact = index
+            console.log("cioa", this.active_contact)
         }
     }
 }).mount('#app')

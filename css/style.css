@@ -35,6 +35,14 @@ body {
     cursor: pointer;
 }
 
+.contact-item:hover {
+    background-color: rgb(221, 220, 220);
+}
+
+.bg-gray {
+    background-color: rgb(221, 220, 220);
+}
+
 .contacts-body {
     flex: 1;
     flex-direction: column;
