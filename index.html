@@ -71,7 +71,7 @@
                     <div class="write-message d-flex align-items-center p-1">
                         <i class="fa-regular fa-face-smile m-3"></i>
                         <div class="input-group input-group-sm p-1">
-                            <input type="text" class="form-control fs-12" placeholder="Scrivi un messaggio">
+                            <input type="text" class="form-control fs-12" placeholder="Scrivi un messaggio" v-model="new_message" @keyup.enter="newMessage()">
                         </div>
                         <i class="fa-solid fa-microphone m-3"></i>
                     </div>

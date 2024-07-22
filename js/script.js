@@ -166,13 +166,25 @@ createApp({
                     ],
                 }
             ],
-            active_contact: null
+            active_contact: null,
+            new_message: null
         }
     },
     methods: {
         selectChat(index) {
             this.active_contact = index
             console.log("cioa", this.active_contact)
+        },
+
+        newMessage() {
+            if (this.new_message.trim() != "") {
+                this.contacts[this.active_contact].messages.push({
+                    date: new Date().toLocaleString(),
+                    message: this.new_message.trim(),
+                    status: 'sent'
+                });
+                this.new_message = null
+            }
         }
     }
 }).mount('#app')
