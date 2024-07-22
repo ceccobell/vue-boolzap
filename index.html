@@ -32,15 +32,17 @@
                         </div>
                     </div>
                     <div class="input-group input-group-sm p-1">
-                        <span class="input-group-text" id="search-addon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" aria-describedby="search-addon">
+                        <span class="input-group-text" id="search-addon" @click="searchContact()"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Search" aria-describedby="search-addon" @input="searchContact()" v-model="chars">
                     </div>
                     <div class="contacts-body bg-white">
-                        <div class="contact-item d-flex p-1" v-for="(contact, index) in contacts" :class="index == active_contact ? 'bg-gray' : ''" @click="selectChat(index)">
-                            <img :src="contact.avatar" alt="" class="avatar me-2">
-                            <div class="d-flex flex-column mb-0">
-                                <div class="fs-12 fw-semibold">{{ contact.name }}</div>
-                                <span class="text-secondary fs-10">{{ contact.messages[contact.messages.length - 1].message}}</span>
+                        <div v-for="(contact, index) in contacts" :class="index == active_contact ? 'bg-gray' : ''" @click="selectChat(index)">
+                            <div v-show="contact.visible" class="contact-item p-1">
+                                <img :src="contact.avatar" alt="" class="avatar me-2">
+                                <div class="d-flex flex-column mb-0">
+                                    <div class="fs-12 fw-semibold">{{ contact.name }}</div>
+                                    <span class="text-secondary fs-10">{{ contact.messages[contact.messages.length - 1].message}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
