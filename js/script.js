@@ -225,6 +225,11 @@ createApp({
 
         deleteMessage(index) {
             this.contacts[this.active_contact].messages.splice(index, 1)
+            if (this.contacts[this.active_contact].messages.length == 0) {
+                this.contacts.splice(this.active_contact, 1)
+                this.active_contact = null
+            }
+            console.log("hai eliminato il", index, "messaggio")
         }
 
     }
