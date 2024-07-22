@@ -21,7 +21,7 @@ body {
 
 .contacts {
     width: 40%;
-    border-right: 1px solid black;
+    border-right: 1px solid #B1B1B1;
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +43,7 @@ body {
     background-color: rgb(221, 220, 220);
 }
 
-.contacts-body {
+.contacts-body, .messages {
     flex: 1;
     flex-direction: column;
     overflow-y: auto;
@@ -79,4 +79,31 @@ body {
 
 .fs-10 {
     font-size: 10px;
+    color: #999;
+}
+
+.messages {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.message {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #fff;
+    align-self: flex-start;
+    text-align: left;
 }

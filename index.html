@@ -16,7 +16,7 @@
                     <div class="d-flex justify-content-between align-items-center p-1">
                         <div class="d-flex align-items-center">
                             <img src="./img/avatar_1.jpg" alt="Francesco" class="avatar me-2">
-                            <span class="fs-12">Francesco</span>
+                            <span class="fs-12 fw-semibold">Francesco</span>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fa-solid fa-circle-notch me-2 header-icon"></i>
@@ -39,17 +39,17 @@
                         <div class="contact-item d-flex p-1" v-for="(contact, index) in contacts" :class="index == active_contact ? 'bg-gray' : ''" @click="selectChat(index)">
                             <img :src="contact.avatar" alt="" class="avatar me-2">
                             <div class="d-flex flex-column mb-0">
-                                <div>{{ contact.name }}</div>
+                                <div class="fs-12 fw-semibold">{{ contact.name }}</div>
                                 <span class="text-secondary fs-10">{{ contact.messages[contact.messages.length - 1].message}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="chat" v-if="active_contact != null">
-                    <div class="d-flex justify-content-between align-items-center p-1">
+                    <div class="chat-header d-flex justify-content-between align-items-center p-1">
                         <div class="d-flex align-items-center">
                             <img :src="contacts[active_contact].avatar" alt="Francesco" class="avatar me-2">
-                            <span class="fs-12">{{ contacts[active_contact].name }}</span>
+                            <span class="fs-12 fw-semibold">{{ contacts[active_contact].name }}</span>
                         </div>
                         <div class="d-flex align-items-center">
                             <i class="fa-solid fa-magnifying-glass me-2 header-icon"></i>
@@ -57,6 +57,14 @@
                             <i class="fa-solid fa-ellipsis-vertical me-2 header-icon"></i>
                         </div>
                     </div>
+                    <div class="messages">
+                    <div class="message" v-for="message in contacts[active_contact].messages" :class="message.status">
+                        <div class="message-content">
+                            <div class="message-text fs-12 fw-semibold mb-1">{{ message.message }}</div>
+                            <div class="message-time fs-10 text-end">{{ message.date }}</div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
