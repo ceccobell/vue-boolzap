@@ -37,7 +37,7 @@
                     </div>
                     <div class="contacts-body bg-white">
                         <div v-for="(contact, index) in contacts" :class="index == active_contact ? 'bg-gray' : ''" @click="selectChat(index)">
-                            <div v-show="contact.visible" class="contact-item p-1">
+                            <div v-show="contact.visible" class="contact-item mouseon p-1">
                                 <img :src="contact.avatar" alt="" class="avatar me-2">
                                 <div class="d-flex flex-column mb-0">
                                     <div class="fs-12 fw-semibold">{{ contact.name }}</div>
@@ -67,7 +67,11 @@
                             <div class="message-content">
                                 <div class="message-text fs-12 fw-semibold mb-1">{{ message.message }}</div>
                                 <div class="message-time fs-10 text-end">{{ message.date }}</div>
-                                <i class="fa-solid fa-angle-down pos-caret-down d-none" :id="'caret-down-' + index"></i>
+                                <i class="fa-solid fa-angle-down pos-caret-down d-none" :id="'caret-down-' + index" @click="showOptions(index)"></i>
+                                <div class="options fs-12 text-start d-none" :id="'message-options-' + index">
+                                    <div class="mouseon p-3">Message info</div>
+                                    <div class="mouseon p-3">Delete message</div>
+                                </div>
                             </div>
                         </div>
                     </div>

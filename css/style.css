@@ -31,11 +31,6 @@ body {
     align-items: flex-start;
 }
 
-.contact-item:hover {
-    background-color: rgb(221, 220, 220);
-    cursor: pointer;
-}
-
 .bg-gray {
     background-color: rgb(221, 220, 220);
 }
@@ -119,3 +114,15 @@ body {
     color: #B1B1B1;
 }
 
+.options {
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 1010;
+}
+
+.mouseon:hover {
+    background-color: rgb(221, 220, 220);
+    cursor: pointer;
+}

@@ -211,6 +211,16 @@ createApp({
         handleMouseLeave(index) {
             document.getElementById("caret-down-" + index).classList.remove("d-block")
             document.getElementById("caret-down-" + index).classList.add("d-none")
+        },
+
+        showOptions(index) {
+            if (document.getElementById("message-options-" + index).classList.contains("d-none")) {
+                document.getElementById("message-options-" + index).classList.remove("d-none")
+                document.getElementById("message-options-" + index).classList.add("d-block")
+            } else if (document.getElementById("message-options-" + index).classList.contains("d-block")) {
+                document.getElementById("message-options-" + index).classList.remove("d-block")
+                document.getElementById("message-options-" + index).classList.add("d-none")
+            }
         }
 
     }
