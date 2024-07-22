@@ -70,7 +70,7 @@
                                 <i class="fa-solid fa-angle-down pos-caret-down d-none" :id="'caret-down-' + index" @click="showOptions(index)"></i>
                                 <div class="options fs-12 text-start d-none" :id="'message-options-' + index">
                                     <div class="mouseon p-3">Message info</div>
-                                    <div class="mouseon p-3">Delete message</div>
+                                    <div class="mouseon p-3" @click="deleteMessage(index)">Delete message</div>
                                 </div>
                             </div>
                         </div>

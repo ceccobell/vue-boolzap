@@ -221,6 +221,10 @@ createApp({
                 document.getElementById("message-options-" + index).classList.remove("d-block")
                 document.getElementById("message-options-" + index).classList.add("d-none")
             }
+        },
+
+        deleteMessage(index) {
+            this.contacts[this.active_contact].messages.splice(index, 1)
         }
 
     }
