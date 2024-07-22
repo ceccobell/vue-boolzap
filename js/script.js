@@ -182,7 +182,16 @@ createApp({
                     date: new Date().toLocaleString(),
                     message: this.new_message.trim(),
                     status: 'sent'
-                });
+                })
+
+                setTimeout(() => {
+                    this.contacts[this.active_contact].messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'ok',
+                        status: 'received'
+                    })
+
+                }, 1000)
                 this.new_message = null
             }
         }
