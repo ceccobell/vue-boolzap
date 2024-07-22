@@ -8,14 +8,10 @@ body {
     background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 10%, rgba(220,219,210,1) 10%, rgba(220,219,210,1) 100%);
 }
 
-.container-fluid {
-    min-height: 100vh;
-}
-
 .content-box {
     width: 80%;
     height: 90vh;
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     display: flex;
 }
 
@@ -87,10 +83,9 @@ body {
     position: relative;
     display: flex;
     padding: 10px;
-    background-image: url(https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg);
-    background-size: cover;
+    background-image: url(../img/mine.jpg );
+    background-size: auto;
 }
-
 
 .message {
     display: flex;
@@ -111,3 +106,16 @@ body {
     align-self: flex-start;
     text-align: left;
 }
+
+.message .message-content {
+    position: relative;
+    padding-right: 30px; 
+}
+
+.pos-caret-down {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #B1B1B1;
+}
+

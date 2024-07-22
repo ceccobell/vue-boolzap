@@ -201,6 +201,16 @@ createApp({
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.chars.toLowerCase())
             })
+        },
+
+        handleMouseEnter(index) {
+            document.getElementById("caret-down-" + index).classList.remove("d-none")
+            document.getElementById("caret-down-" + index).classList.add("d-block")
+        },
+
+        handleMouseLeave(index) {
+            document.getElementById("caret-down-" + index).classList.remove("d-block")
+            document.getElementById("caret-down-" + index).classList.add("d-none")
         }
 
     }
