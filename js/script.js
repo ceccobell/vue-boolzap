@@ -166,7 +166,7 @@ createApp({
                     ],
                 }
             ],
-            active_contact: null,
+            active_contact: 0,
             new_message: '',
             chars: ''
         }
@@ -224,6 +224,9 @@ createApp({
         },
 
         deleteMessage(index) {
+            document.getElementById("message-options-" + index).classList.remove("d-block")
+            document.getElementById("message-options-" + index).classList.add("d-none")
+
             this.contacts[this.active_contact].messages.splice(index, 1)
             if (this.contacts[this.active_contact].messages.length == 0) {
                 this.contacts.splice(this.active_contact, 1)
